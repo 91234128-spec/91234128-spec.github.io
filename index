@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣在地美食精選：台南、高雄、花蓮五大料理</title>
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 設定中文字體為 Inter 或無襯線字體 */
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background-color: #f8fafc; /* 淺灰色背景 */
+        }
+        /* 自定義卡片背景，讓視覺更豐富 */
+        .food-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+        .food-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 主要容器：置中並設定最大寬度，響應式設計 -->
+    <div class="container mx-auto p-4 sm:p-8 max-w-6xl">
+
+        <!-- 標題區塊 -->
+        <header class="text-center py-10 bg-white rounded-xl shadow-lg mb-10">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-teal-600 mb-2">台灣在地美食精選</h1>
+            <p class="text-xl text-gray-700 font-light">台南、高雄、花蓮五大經典料理導覽</p>
+        </header>
+
+        <!-- 美食列表：使用 Grid 佈局，手機堆疊，桌面兩欄 -->
+        <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- 1. 台南牛肉湯 -->
+            <section class="food-card bg-white p-6 rounded-xl border-t-4 border-teal-500">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">1. 台南牛肉湯 (Tainan Beef Soup)</h2>
+                <div class="relative mb-4 overflow-hidden rounded-lg">
+                    <!-- 圖片佔位符 -->
+                    <img src="https://placehold.co/400x250/0f766e/ffffff?text=台南牛肉湯" alt="台南牛肉湯圖片" class="w-full h-auto object-cover rounded-lg">
+                </div>
+                <div class="text-gray-600 leading-relaxed">
+                    <p>台南最具代表性的早餐或宵夜。它使用當天現宰的溫體牛肉，切成薄片後，直接沖入滾燙的高湯，將肉片燙至五至七分熟。湯頭清甜鮮美，肉質軟嫩帶有彈性。這種清燙的手法, 完美保留了牛肉的原始風味, 是遊客來台南絕對不能錯過的獨特體驗。</p>
+                </div>
+            </section>
+
+            <!-- 2. 台南碗粿 -->
+            <section class="food-card bg-white p-6 rounded-xl border-t-4 border-blue-500">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">2. 台南碗粿 (Tainan Savory Rice Pudding)</h2>
+                <div class="relative mb-4 overflow-hidden rounded-lg">
+                    <!-- 圖片佔位符 -->
+                    <img src="https://placehold.co/400x250/2563eb/ffffff?text=台南碗粿" alt="台南碗粿圖片" class="w-full h-auto object-cover rounded-lg">
+                </div>
+                <div class="text-gray-600 leading-relaxed">
+                    <p>台灣南部的經典古早味小吃。與北部顏色較白的碗粿不同, 台南碗粿因加入醬油和肉燥而呈現深褐色, 口感軟Q滑順。內餡通常包含蝦仁、香菇和滷肉塊等豐富配料。淋上店家特製的蒜蓉醬油膏，鹹甜適中，風味迷人。</p>
+                </div>
+            </section>
+
+            <!-- 3. 高雄鴨肉飯 -->
+            <section class="food-card bg-white p-6 rounded-xl border-t-4 border-yellow-600">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">3. 高雄鴨肉飯 (Kaohsiung Duck Rice)</h2>
+                <div class="relative mb-4 overflow-hidden rounded-lg">
+                    <!-- 圖片佔位符 -->
+                    <img src="https://placehold.co/400x250/ca8a04/ffffff?text=高雄鴨肉飯" alt="高雄鴨肉飯圖片" class="w-full h-auto object-cover rounded-lg">
+                </div>
+                <div class="text-gray-600 leading-relaxed">
+                    <p>來到高雄鹽埕等老城區必嚐的小吃。店家將烤得油亮多汁的鴨肉切塊，豪邁地鋪在淋上香濃鴨油肉燥的米飯上。鴨肉香氣十足，米飯吸飽醬汁精華，再配上一碗清爽的下水湯或當歸鴨湯，是高雄人心中最療癒的日常美食。</p>
+                </div>
+            </section>
+
+            <!-- 4. 高雄蒸蛋湯 -->
+            <section class="food-card bg-white p-6 rounded-xl border-t-4 border-slate-600">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">4. 高雄蒸蛋湯 (Kaohsiung Steamed Egg Soup)</h2>
+                <div class="relative mb-4 overflow-hidden rounded-lg">
+                    <!-- 圖片佔位符 -->
+                    <img src="https://placehold.co/400x250/475569/ffffff?text=高雄蒸蛋湯" alt="高雄蒸蛋湯圖片" class="w-full h-auto object-cover rounded-lg">
+                </div>
+                <div class="text-gray-600 leading-relaxed">
+                    <p>這道料理常與高雄的筒仔米糕一同享用，是當地特有的組合。蒸蛋湯的口感像豆腐般細緻滑嫩，湯頭是清甜的柴魚高湯，上面會撒上少許肉鬆或香菇肉燥，味道鮮美清淡，尤其適合搭配米糕等重口味主食，是高雄在地人氣美食。</p>
+                </div>
+            </section>
+
+            <!-- 5. 花蓮炸彈蔥油餅 -->
+            <section class="food-card lg:col-span-2 bg-white p-6 rounded-xl border-t-4 border-red-600">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">5. 花蓮炸彈蔥油餅 (Hualien Fried Scallion Pancake with Egg)</h2>
+                <div class="relative mb-4 overflow-hidden rounded-lg max-w-lg mx-auto">
+                    <!-- 圖片佔位符 -->
+                    <img src="https://placehold.co/600x350/dc2626/ffffff?text=花蓮炸彈蔥油餅" alt="花蓮炸彈蔥油餅圖片" class="w-full h-auto object-cover rounded-lg">
+                </div>
+                <div class="text-gray-600 leading-relaxed">
+                    <p>花蓮的排隊美食代表。將揉好的麵皮放入熱油中炸至外層酥脆金黃，重點是中間那顆半熟的蛋。老闆會將油鍋中的蔥油餅撈起後，戳破一個小口塞入炸得邊緣焦脆但蛋黃仍保持液態的半熟蛋。一口咬下，金黃的蛋液緩緩流出，搭配酥香的餅皮，口感層次豐富，「炸彈」之名由此而來。</p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 頁腳 -->
+        <footer class="text-center py-6 mt-10 text-gray-500 border-t border-gray-200">
+            <p>&copy; 2025 台灣在地美食導覽 | 資訊參考自網路資料</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
