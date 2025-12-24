@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣在地美食精選：深度導覽版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background-color: #f8fafc; /* [cite: 1, 2] */
+        }
+        .food-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* [cite: 2, 3] */
+        }
+        .food-card:hover {
+            transform: translateY(-5px); /* [cite: 3, 4] */
+        }
+        /* 用於控制分頁顯示 */
+        .page { display: none; }
+        .page.active { display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto p-4 sm:p-8 max-w-6xl">
+        <header class="text-center py-10 bg-white rounded-xl shadow-lg mb-10 cursor-pointer" onclick="showPage('home')">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-teal-600 mb-2">台灣在地美食精選</h1>
+            <p class="text-xl text-gray-700 font-light">點擊標題回到首頁</p>
+        </header>
+
+        <main id="home" class="page active grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <section class="food-card bg-white p-6 rounded-xl border-t-4 border-teal-500 cursor-pointer" onclick="showPage('beef-soup')">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">1. 台南牛肉湯</h2>
+                <img src="001.jpg?text=台南牛肉湯" class="w-full h-48 object-cover rounded-lg mb-4">
+                <p class="text-gray-600 line-clamp-3">台南最具代表性的早餐。使用當天現宰溫體牛，直接沖入高湯燙至粉嫩。 [cite: 7]</p>
+                <span class="text-teal-600 font-bold mt-4 inline-block">點擊查看詳細典故與作法 →</span>
+            </section>
+
+            <section class="food-card bg-white p-6 rounded-xl border-t-4 border-blue-500 cursor-pointer" onclick="showPage('rice-pudding')">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">2. 台南碗粿</h2>
+                <img src="002.jpg?text=台南碗粿" class="w-full h-48 object-cover rounded-lg mb-4">
+                <p class="text-gray-600 line-clamp-3">深褐色的古早味，內餡包含蝦仁、香菇和滷肉，淋上蒜蓉醬油膏風味絕佳。 [cite: 9]</p>
+                <span class="text-blue-600 font-bold mt-4 inline-block">點擊查看詳細典故與作法 →</span>
+            </section>
+
+            <section class="food-card bg-white p-6 rounded-xl border-t-4 border-yellow-600 cursor-pointer" onclick="showPage('duck-rice')">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">3. 高雄鴨肉飯</h2>
+                <img src="003.jpg?text=高雄鴨肉飯" class="w-full h-48 object-cover rounded-lg mb-4">
+                <p class="text-gray-600 line-clamp-3">鹽埕老城區必嚐，油亮多汁的鴨肉配上吸飽鴨油精華的米飯。 [cite: 12]</p>
+                <span class="text-yellow-600 font-bold mt-4 inline-block">點擊查看詳細典故與作法 →</span>
+            </section>
+
+            <section class="food-card bg-white p-6 rounded-xl border-t-4 border-slate-600 cursor-pointer" onclick="showPage('egg-soup')">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">4. 高雄蒸蛋湯</h2>
+                <img src="004.jpg?text=高雄蒸蛋湯" class="w-full h-48 object-cover rounded-lg mb-4">
+                <p class="text-gray-600 line-clamp-3">細緻如豆腐的蒸蛋搭配柴魚高湯，是筒仔米糕的最佳靈魂伴侶。 [cite: 14]</p>
+                <span class="text-slate-600 font-bold mt-4 inline-block">點擊查看詳細典故與作法 →</span>
+            </section>
+
+            <section class="food-card lg:col-span-2 bg-white p-6 rounded-xl border-t-4 border-red-600 cursor-pointer" onclick="showPage('pancake')">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">5. 花蓮炸彈蔥油餅</h2>
+                <img src="005.jfif?text=花蓮炸彈蔥油餅" class="w-full h-48 object-cover rounded-lg mb-4">
+                <p class="text-gray-600 line-clamp-3">爆漿蛋液與酥香餅皮的極致結合，花蓮最知名的排隊美食。 [cite: 17]</p>
+                <span class="text-red-600 font-bold mt-4 inline-block">點擊查看詳細典故與作法 →</span>
+            </section>
+        </main>
+
+        <article id="beef-soup" class="page bg-white p-8 rounded-xl shadow-lg">
+            <button onclick="showPage('home')" class="mb-6 text-teal-600 font-bold">← 返回首頁</button>
+            <h2 class="text-4xl font-bold text-teal-600 mb-6">台南牛肉湯：晨間的鮮甜傳說</h2>
+            <div class="space-y-6 text-gray-700">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">【歷史典故】</h3>
+                    <p>台南牛肉湯的興起與善化肉牛交易市場（牛墟）有關。為了確保牛肉在凌晨現宰後能以最快速度送達，發展出「溫體牛」文化，成為在地人開啟一天的重要儀式。 [cite: 7]</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">【詳細作法】</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>熬製高湯：使用牛大骨、牛雜與蔬果慢火熬煮。</li>
+                        <li>精細刀工：將溫體牛肉逆紋切成極薄片。</li>
+                        <li>清燙技法：將薄肉片置於碗中，直接沖入滾燙高湯，利用餘溫燙至粉嫩色。 [cite: 7]</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article id="rice-pudding" class="page bg-white p-8 rounded-xl shadow-lg">
+            <button onclick="showPage('home')" class="mb-6 text-blue-600 font-bold">← 返回首頁</button>
+            <h2 class="text-4xl font-bold text-blue-600 mb-6">台南碗粿：古早味的褐色記憶</h2>
+            <div class="space-y-6 text-gray-700">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">【歷史典故】</h3>
+                    <p>台南碗粿以「深褐色」聞名，主因是早期農家習慣在米漿中加入醬油與肉燥拌勻，這與北部的白米漿做法截然不同，風味更為濃郁。 [cite: 9]</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">【詳細作法】</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>磨漿拌色：選用陳年舊米磨漿，拌入醬油與香濃肉燥。</li>
+                        <li>豐富內餡：加入蝦仁、香菇、滷蛋及肉塊。</li>
+                        <li>高溫炊蒸：倒入瓷碗中以大火炊熟，保持軟Q口感。 [cite: 9]</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <footer class="text-center py-6 mt-10 text-gray-500 border-t border-gray-200">
+            <p>&copy; 2025 台灣在地美食導覽 | 資訊參考自網路資料 [cite: 18]</p>
+        </footer>
+    </div>
+
+    <script>
+        // 簡單的 JavaScript 切換功能
+        function showPage(pageId) {
+            // 隱藏所有頁面
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            // 顯示目標頁面
+            document.getElementById(pageId).classList.add('active');
+            // 捲動到頂部
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
